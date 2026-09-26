@@ -1,4 +1,4 @@
-# Contributing to Calculator
+# Contributing to Simple Interest Calculator
 
 All contributions, bug reports, bug fixes, documentation improvements, enhancements, and ideas are welcome.
 
@@ -10,75 +10,80 @@ We welcome contributions from everyone. Before you start, please take a moment t
 
 ### Bug Reports
 
-If you discover a bug, please open an issue with the following information:
+If you discover a bug in the calculator, please open an issue with the following information:
 
 - A clear, descriptive title
 - A detailed description of the bug
-- Steps to reproduce the issue
+- Steps to reproduce the issue (input values, expected vs actual output)
 - Expected behavior
 - Actual behavior
-- Your environment (OS, version, etc.)
-- Any relevant code snippets or error messages
+- Your environment (OS, Bash version, bc availability, etc.)
+- Any relevant error messages or terminal output
 
 ### Bug Fixes
 
-When submitting a bug fix:
+When submitting a bug fix for the calculator:
 
 - Include a clear description of the problem being fixed
 - Reference the issue number if applicable
-- Add tests that verify the fix works
-- Update documentation if necessary
-- Follow the coding standards outlined below
+- Add test cases that verify the fix works correctly
+- Update documentation if the fix changes expected behavior
+- Follow the shell script coding standards outlined below
 
 ### Documentation Improvements
 
-Documentation is crucial for any project. You can help by:
+Documentation is crucial for the calculator project. You can help by:
 
 - Fixing typos or unclear explanations
-- Adding examples or clarifications
-- Improving README or other documentation files
-- Adding helpful comments to code
-- Creating tutorials or guides
+- Adding more usage examples
+- Improving the README or other documentation files
+- Clarifying complex formulas or calculations
+- Adding helpful comments to the shell script
+- Creating tutorials or guides for advanced usage
 
 ### Feature Enhancements
 
-When proposing a new feature:
+When proposing a new feature for the calculator:
 
-- Open an issue first to discuss the idea
-- Explain the use case and benefits
+- Open an issue first to discuss the idea with maintainers
+- Explain the use case and benefits (e.g., compound interest, tax calculations)
 - Be open to feedback and discussion
 - Provide examples of how the feature would work
+- Consider backward compatibility
 
 ### Ideas and Suggestions
 
-Have an idea? We'd love to hear it! Open an issue to discuss your thoughts and suggestions.
+Have an idea for the calculator? We'd love to hear it! Open an issue to discuss your thoughts and suggestions.
 
 ## Development Process
 
 ### 1. Fork and Clone
 
 - Fork the repository on GitHub
-- Clone your fork locally: `git clone https://github.com/your-username/calculator.git`
-- Add the upstream repository: `git remote add upstream https://github.com/original/calculator.git`
+- Clone your fork locally: `git clone https://github.com/your-username/Calculator.git`
+- Add the upstream repository: `git remote add upstream https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub.git`
 
 ### 2. Create a Branch
 
 - Create a new branch for your work: `git checkout -b feature/your-feature-name`
 - Use descriptive branch names that indicate the type of change
-- Examples: `fix/issue-123`, `docs/update-readme`, `feature/new-calculation`
+- Examples: `fix/rounding-issue`, `docs/update-formula`, `feature/compound-interest`
 
 ### 3. Make Your Changes
 
-- Write clear, maintainable code
-- Follow the coding standards
-- Commit messages should be clear and descriptive
-- Reference issue numbers in commit messages when applicable
+- Write clear, maintainable Bash code
+- Follow the shell script coding standards
+- Add comments explaining complex logic
+- Test your changes thoroughly with various inputs
+- Ensure the script remains portable across different systems
 
 ### 4. Test Your Changes
 
-- Run all existing tests to ensure nothing is broken
-- Add new tests for your changes
-- Ensure your code passes all tests and linting checks
+- Run the calculator script with various inputs
+- Test edge cases and boundary conditions
+- Verify input validation works correctly
+- Test on different systems if possible (Linux, macOS, WSL)
+- Ensure the bc calculations are accurate
 
 ### 5. Push and Submit a Pull Request
 
@@ -90,37 +95,62 @@ Have an idea? We'd love to hear it! Open an issue to discuss your thoughts and s
 
 ## Coding Standards
 
-- Follow existing code style and conventions
+- Follow existing Bash script style and conventions
 - Write clear, readable code with meaningful variable names
-- Add comments for complex logic
+- Add comments for complex logic and calculations
 - Keep functions focused and modular
-- Avoid unnecessary dependencies
-- Test your code thoroughly
+- Avoid unnecessary dependencies (stick with Bash built-ins and standard tools like bc)
+- Use proper quoting and escaping for variables
+- Follow the existing error handling patterns
+- Test your code thoroughly with various inputs
+
+### Bash Style Guide
+
+- Use 4 spaces for indentation (no tabs)
+- Use lowercase for variable names with underscores: `my_variable`
+- Use UPPERCASE for constants: `CONSTANT_VALUE`
+- Use meaningful function names in snake_case
+- Add function comments explaining purpose and parameters
+- Always quote variables: `"$variable"` not `$variable`
+- Use [[ ]] for conditionals instead of [ ]
+- Use local variables in functions to avoid polluting global scope
 
 ## Commit Message Guidelines
 
 - Use clear, concise commit messages
-- Start with a verb (Add, Fix, Update, Remove, Refactor, etc.)
+- Start with a verb (Add, Fix, Update, Remove, Refactor, Improve, etc.)
 - Keep the first line under 72 characters
 - Provide additional details in the body if needed
 - Reference issue numbers: `Fixes #123` or `Related to #456`
+- Describe the "why" not just the "what"
 
 ### Example Commit Messages
 
 ```
-Fix calculation accuracy for division operations
+Fix precision issue in simple interest calculation
 
-Resolves: #123
-- Updated precision handling in division method
-- Added test cases for edge cases
+Resolves: #42
+- Updated bc precision to 2 decimal places
+- Added test cases for edge cases with large numbers
+- Improved error handling for invalid bc operations
 ```
 
 ```
-Add documentation for API endpoints
+Add support for compound interest calculation
 
-Improves: #456
-- Added comprehensive API documentation
-- Included usage examples
+Improves: #15
+- Implemented compound interest formula
+- Added interactive prompt for compound frequency
+- Updated documentation with examples
+- Maintained backward compatibility
+```
+
+```
+Update documentation with more usage examples
+
+- Added examples for various investment scenarios
+- Clarified formula explanations
+- Added troubleshooting section
 ```
 
 ## Code Review Process
