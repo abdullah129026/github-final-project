@@ -1,4 +1,4 @@
-# Simple Interest Calculator
+# Simple Interest Calculator - Fixed
 
 A simple yet powerful Bash script to calculate simple interest based on principal amount, rate of interest, and time period.
 
