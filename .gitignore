@@ -1,0 +1,7 @@
+# Documentation files not to be committed
+forked-repo
+bug-fix-revert
+github-branches
+merge_branches
+GITHUB_SETUP.md
+PROJECT_UPDATES.md
